@@ -1,0 +1,10 @@
+.galeria {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.kep-karty {
+  border: 1px solid #ccc;
+  padding: 10px;
+  cursor: pointer;
+}

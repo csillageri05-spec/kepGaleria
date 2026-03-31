@@ -1,17 +1,21 @@
-export default class Kepek {
-  #lista = {};
+import Kep from "./Kep.js";
 
-  constructor(lista = { kep, nev }, szuloElem) {
+export default class Kepek {
+  #lista = [];
+
+  constructor(lista, szuloElem) {
     this.#lista = lista;
+
     this.szuloElem = szuloElem;
+
     this.megjelenit();
   }
 
-  getLista(){
-    return this.#lista
-  }
+  megjelenit() {
+    this.szuloElem.innerHTML = "";
 
-  megjelenit(){
-    
+    this.#lista.forEach((elem, index) => {
+      new Kep(elem.src, elem.cim, elem.leiras, index, this.szuloElem);
+    });
   }
 }
