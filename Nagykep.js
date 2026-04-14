@@ -1,4 +1,4 @@
-export default class Kep {
+export default class Nagykep {
   #src = "";
   #cim = "";
   #leiras = "";
@@ -16,15 +16,13 @@ export default class Kep {
   }
 
   megjelenit() {
-    const html = `
-            <div class="kep-karty">
-                <img src="${this.#src}" alt="${this.#cim}" style="max-width: 200px;">
-                <h3>${this.#cim}</h3>
-                <p>${this.#leiras}</p>
-            </div>
-        `;
+    const nagyKep = `
+        <div class="balGomb"><button><</button></div>
+        <div class="nagyKep"></div>
+        <div class="jobbGomb"><button>></button></div>
+      </div>`;
 
-    this.szuloElem.insertAdjacentHTML("beforeend", html);
+    this.szuloElem.insertAdjacentHTML("beforeend", nagyKep);
 
     this.kepElem = this.szuloElem.lastElementChild;
 
@@ -38,4 +36,3 @@ export default class Kep {
     window.dispatchEvent(e);
   }
 }
-

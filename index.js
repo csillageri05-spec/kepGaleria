@@ -1,27 +1,13 @@
+import { adatok } from "./adatlista.js";
 import Kepek from "./Kepek.js";
+import Nagykep from "./nagykep.js";
 
-const adatok = [
-  {
-    src: "https://picsum.photos/id/237/200/300",
-    cim: "Kutya",
-    leiras: "Cuki fekete kutya",
-  },
-  {
-    src: "https://picsum.photos/id/238/200/300",
-    cim: "Város",
-    leiras: "Épületek felülről",
-  },
-  {
-    src: "https://picsum.photos/id/239/200/300",
-    cim: "Pitypang",
-    leiras: "Sárga virág",
-  },
-];
-
+const kezmuvesCarouselTarolo = document.querySelector(".kezmuvesCarousel");
 const galeriaTarolo = document.querySelector(".galeria");
 
+new kezmuvesCarouselTarolo(adatok, kezmuvesCarouselTarolo);
 new Kepek(adatok, galeriaTarolo);
 
 window.addEventListener("kivalaszt", (event) => {
-    console.log("Kattintott kép indexe:", event.detail);
+  console.log("Kattintott kép indexe:", event.detail);
 });
